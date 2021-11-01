@@ -1,29 +1,224 @@
-<!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>form validation</title>
   </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="bg-white pr-5 pl-5 pt-4 pb-4">
+        <form class="formulario border rounded" id="formulario" method="GET">
+          <h3 class="bg-light border p-2" id="h3">
+            James's Payment form example
+          </h3>
+
+          <p class="alert alert-danger border rounded m-3 p-3" id="alerta">
+            <strong>Some fields are missing.</strong>
+          </p>
+
+          <div class="row formulariogrupo">
+            <div class="col-md-5 ml-3 mr-3 pt-2 formulariocard" id="grupocard">
+              <label for="card"><h6>Card#</h6></label>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="xxxx-xxxx-xxxx-xxxx"
+                value=""
+                name="card"
+                id="card"
+              />
+              <p class="pcard" id="pcard">
+                invalid, empty or no contains the 16 digit card number.
+              </p>
+            </div>
+
+            <div class="col-md-3 ml-3 mr-3 pt-2" id="grupocvc">
+              <label for="validation"><h6>CVC#</h6></label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="xxx"
+                value=""
+                name="cvc"
+                id="cvc"
+              />
+              <p class="pcvc" id="pcvc">
+                invalid, empty or no contains the 3 digits in the back of your
+                card.
+              </p>
+            </div>
+
+            <div class="col-md ml-3 mr-3 pt-2" id="grupoamount">
+              <label for="validation"><h6>Amount</h6></label>
+              <i class="fa fa-usd" aria-hidden="true"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Amount"
+                name="amount"
+                id="amount"
+              />
+              <p id="pamount">
+                add a number of minimum 6 digits.
+              </p>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 mr-3 ml-3 pt-2" id="grupofirstname">
+              <label for="validation"><h6>First Name</h6></label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                name="firstname"
+                id="firstname"
+              />
+              <p id="pfirstname">
+                Add a valid name.
+              </p>
+            </div>
+
+            <div class="col-md mr-3 ml-3 pt-2 " id="grupolastname">
+              <label for="validation"><h6>Last Name</h6> </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                name="lastname"
+                id="lastname"
+              />
+              <p id="plastname">
+                Add a valid lastname.
+              </p>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 ml-3 mr-3 pt-2" id="grupocity">
+              <label for="validation"><h6>City</h6></label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                value=""
+                name="city"
+                id="city"
+              />
+              <p id="pcity">
+                Add a city.
+              </p>
+            </div>
+
+            <div class="col-md ml-3 mr-3 pt-2" id="lista">
+              <label for="validation"><h6>State</h6></label>
+              <select class="custom-select" id="Select">
+                <option selected id="select">Pick a state</option>
+                <option value="1">Lo Prado</option>
+                <option value="2">Pudahuel</option>
+                <option value="3">Quinta Normal</option>
+              </select>
+              <p id="pselect">You have to select an element</p>
+            </div>
+
+            <div class="col-md ml-3 mr-3 pt-2" id="grupopostalcode">
+              <label for="validation"><h6>Postal Code</h6></label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                value=""
+                name="postalcode"
+                id="postalcode"
+              />
+              <p id="ppostalcode">
+                Add a valid postal code.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 ml-3 mr-3 pt-2">
+              <label for="validation"><h6>We accept:</h6></label><br />
+              <div
+                class=" btn-secondary float-left col-md-6 d-flex justify-content-between rounded p-3"
+                aria-label="Basic example"
+                id="radios"
+              >
+                <input
+                  type="radio"
+                  name="master"
+                  value="mastercard"
+                  class="mr-1"
+                /><i class="fa fa-cc-mastercard"></i>
+                <input type="radio" name="master" value="visa" class="mr-1" /><i
+                  class="fa fa-cc-visa"
+                ></i>
+                <input
+                  type="radio"
+                  name="master"
+                  value="dinnersclub"
+                  class="mr-1"
+                /><i class="fa fa-cc-diners-club"></i>
+                <input type="radio" name="master" value="amex" class="mr-1" /><i
+                  class="fa fa-cc-amex"
+                ></i>
+              </div>
+              <p id="pmaster">chose a payment method.</p>
+            </div>
+
+            <div class="col mr-3 ml-3 pt-2" id="grupomessage">
+              <label for="validation"><h6>Mesagge</h6></label>
+              <textarea
+                name="mensaje"
+                id="mensaje"
+                cols="53"
+                rows="3"
+                class=" rounded col-md"
+              ></textarea>
+              <p id="pmensaje">Add a text message.</p>
+            </div>
+          </div>
+
+          <div class="col-12  bg-light" id="but">
+            <button class="btn btn-secondary rounded mr-2">Cancel</button>
+            <button type="submit" class="btn btn-primary rounded" id="enviar">
+              Send
+            </button>
+          </div>
+        </form>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
   </body>
 </html>

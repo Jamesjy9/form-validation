@@ -1,1 +1,52 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.btn {
+  float: right;
+}
+.input-error {
+  border: 2px solid red;
+}
+
+.input-valido {
+  border: 2px solid green;
+}
+
+#pmaster {
+  display: block;
+  color: red;
+}
+
+#pselect {
+  color: red;
+}
+
+#pmensaje {
+  color: red;
+}
+
+#ppostalcode {
+  color: red;
+}
+
+#pfirstname {
+  color: red;
+}
+
+#plastname {
+  color: red;
+}
+
+#pcity {
+  color: red;
+}
+
+#pcvc {
+  color: red;
+}
+
+#pcard {
+  color: red;
+}
+
+#pamount {
+  color: red;
+}
